@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bugtracker-controller-deployment
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bugtracker-controller
+  template:
+    metadata:
+      labels:
+        app: bugtracker-controller
+    spec:
+      containers:
+      - image: bugtracker-controller:v6
+        imagePullPolicy: Never
+        name: bugtracker-controller
+        ports:
+        - containerPort: 6060
+          name: http-port
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+      restartPolicy: Always
+      serviceAccountName: bug-tracker
