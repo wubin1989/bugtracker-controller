@@ -148,7 +148,7 @@ kubectl apply -f bugtrackercontroller_deployment.yaml
 
 ![dingtalk.png](./dingtalk.png)
 
-7. 将`demo/demo_deployment.yaml`文件中的注解`a8r.io/bugs`的值改成`"#14"`，再重新部署
+7. 将`demo/demo_deployment.yaml`文件中的注解`a8r.io/bugs`的值改成`"#21"`，再重新部署
 
 ```shell
 cd demo && go-doudou svc deploy
